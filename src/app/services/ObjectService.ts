@@ -48,8 +48,7 @@ export class ObjectService {
     }
 
     switchStatus(i) {
-        if (this.objectList[i].status === 'connecté') { this.objectList[i].status = 'deconnecté'; }
-        else { this.objectList[i].status = 'connecté'; }
+        if (this.objectList[i].status === 'connecté') { this.objectList[i].status = 'deconnecté'; } else { this.objectList[i].status = 'connecté'; }
     }
 
     switchEtat(i) {
@@ -101,5 +100,21 @@ export class ObjectService {
                 });
             }
         });
+    }
+
+    getAppareil(id: number) {
+      for (const et of this.objectList) {
+        if (et.id === id) {
+          return et;
+        }
+      }
+    }
+
+    AppareilExist(id: number) {
+      for (const et of this.objectList) {
+        if (et.id === id) {
+          return true;
+        } else { return false; }
+      }
     }
 }

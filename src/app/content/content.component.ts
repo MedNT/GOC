@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ObjectService } from '../services/ObjectService';
 
@@ -10,13 +10,12 @@ import { ObjectService } from '../services/ObjectService';
 
 export class ContentComponent implements OnInit {
 
+  @Input() nom;
+  @Input() status;
+  @Input() id;
   public hide = 0;
   public turn = 0;
-  public cnx = 0;
-  public icone: String = 'play_arrow';
-  public color: String = 'red';
-  public color1: String = 'red';
-  public error = false;
+  public color = 'red';
   public list = Array();
 
   constructor(private listService: ObjectService) {
@@ -69,5 +68,4 @@ export class ContentComponent implements OnInit {
   connect(i) {
     this.listService.switchEtat(i);
   }
-
 }

@@ -5,7 +5,7 @@
       <ul class="right hide-on-med-and-down">
         <li><a href="#"><i class="material-icons">search</i></a></li>
         <li><a href="#"><i class="material-icons">view_module</i></a></li>
-        <li><a href="#"><i class="material-icons">refresh</i></a></li>
+        <li><a routerLink="" ><i class="material-icons">logout</i></a></li>
         <li><a (click)="showSideBar()"><i class="material-icons">more_vert</i></a></li>
       </ul>
     </div>
@@ -14,10 +14,10 @@
     <div class="col s8"></div>
     <div class="col s4">
         <div class="collection" *ngIf="state == 0">
-            <a (click)="connectAll()" href="#!" class="collection-item">Connectée Tout !</a>
-            <a (click)="disconnectAll()" href="#!" class="collection-item">Déconnecter Tout !</a>
-            <a (click)="allumeAll()" href="#!" class="collection-item">Alumer Tout !</a>
-            <a (click)="eteindreAll()" href="#!" class="collection-item">Eteindre Tout !</a>
+            <a (click)="connectAll()" class="collection-item">Connectée Tout !</a>
+            <a (click)="disconnectAll()" class="collection-item">Déconnecter Tout !</a>
+            <a (click)="allumeAll()" class="collection-item">Alumer Tout !</a>
+            <a (click)="eteindreAll()" class="collection-item">Eteindre Tout !</a>
         </div>
     </div>
 </div>
@@ -26,4 +26,3 @@
 
 
 
-            

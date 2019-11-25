@@ -1,0 +1,25 @@
+<div class="container">
+  <h3 *ngIf="!isAuth">Login :</h3>
+  <h3 *ngIf="isAuth">Logout :</h3>
+  <br>
+  <form (ngSubmit)="login(f)" #f=ngForm>
+    <div *ngIf="!isAuth" class="row">
+      <div class="input-field col s12">
+        <input placeholder="Username" id="username" name="username" type="text" class="validate" ngModel>
+        <label for="username">Username</label>
+      </div>
+    </div>
+    <div *ngIf="!isAuth" class="row">
+      <div class="input-field col s12">
+        <input  placeholder="Password" id="password" name="password" type="password" class="validate" ngModel>
+        <label for="password">Password</label>
+      </div>
+    </div>
+    <button *ngIf="!isAuth" class="btn waves-effect waves-light" type="submit">Log IN
+      <i class="material-icons right">send</i>
+    </button>
+    <button  *ngIf="isAuth" (click)="logOut()" class="btn waves-effect waves-light" type="submit">Log Out
+      <i class="material-icons left">logout</i>
+    </button>
+  </form>
+</div>
